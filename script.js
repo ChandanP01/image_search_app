@@ -18,8 +18,6 @@ const fetchImages = async function (query, pageNo) {
         const response = await fetch(url);
         const data = await response.json();
 
-        console.log(data);
-
         if(data.results.length > 0){
         data.results.forEach(element => {
             // creating image div
