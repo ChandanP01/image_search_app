@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Lumanosimo&family=Poppins:wght@400;500;600;700&family=Raleway&family=Ubuntu:wght@400;500;700&family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lumanosimo', cursive;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 40px;
+    background: #020024;
+    background: linear-gradient(90deg, #020024 0%, #e4e4ef 0%, #a4c4ca 100%);
+}
+
+header {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+header h1 #img {
+    color: #ffa500;
+}
+
+header h1 #app {
+    color: #04c904;
+}
+
+header form .search-container {
+    margin-top: 20px;
+    position: relative;
+}
+
+header form .search-container input {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    border-radius: 25px;
+    background: #eee;
+}
+
+header form .search-container .icon {
+    position: absolute;
+    right: 15px;
+    bottom: 12px;
+    color: #777;
+    cursor: pointer;
+}
+
+main .image-container {
+    margin-block: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.image-container img {
+    width: 300px;
+    height: 280px;
+}
+
+.image-container .photos {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s linear 0s;
+}
+
+.image-container .overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: height 0.5s ease;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.overlay h3 {
+    display: none;
+    font-size: 1.1rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+.photos:hover{
+    transform: scale(1.1);
+}
+.photos:hover .overlay {
+    opacity: 1;
+    bottom: 6px;
+    height: 100%;
+}
+
+.photos:hover .overlay h3 {
+    display: block;
+}
+
+main section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0 ;
+}
+.loadmore{
+    text-transform: capitalize;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    background: #5cbed7;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: none;
+}
+.loadmore:hover{
+    background: #0ef;
+    box-shadow: 2px 2px 10px #0ef;
+}
+
+@media screen and (max-width:920px) {
+    header {
+        width: 80%;
+    }
+}
