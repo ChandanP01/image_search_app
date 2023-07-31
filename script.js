@@ -4,6 +4,7 @@ const searchForm = document.querySelector('form');
 const input = document.querySelector('.search-input');
 const imageContainer = document.querySelector('.image-container');
 const loadmoreBtn = document.querySelector('.loadmore');
+const icon = document.querySelector('.icon');
 let page = 1;
 
 
@@ -54,7 +55,7 @@ const fetchImages = async function (query, pageNo) {
         }
     }
 }
-
+// Give results on enter
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const inputValue = input.value.trim();
@@ -64,6 +65,21 @@ searchForm.addEventListener('submit', (e) => {
     else {
         imageContainer.innerHTML = `<h2>Please enter a search query</h2>`;
         if(loadmoreBtn.style.display == "block"){
+            loadmoreBtn.style.display == "none";
+        }
+    }
+});
+
+// give results on click the search button
+icon.addEventListener('click', (e) => {
+    e.preventDefault();
+    const inputValue = input.value.trim();
+    if (inputValue !== '') {
+        fetchImages(inputValue, page);
+    }
+    else {
+        imageContainer.innerHTML = `<h2>Please enter a search query</h2>`;
+        if (loadmoreBtn.style.display == "block") {
             loadmoreBtn.style.display == "none";
         }
     }
